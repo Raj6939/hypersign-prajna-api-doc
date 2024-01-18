@@ -26,6 +26,20 @@
 
    > Store the API Secret key safe, for further use
 
+ 6. Get Balance to your App
+
+    Copy the wallet address from clicking Edit button on your app
+
+    ![image](https://github.com/Raj6939/hypersign-prajna-api-doc/assets/67961128/f414c156-678f-4a64-b772-510740b8eeb2)
+
+    You can claim the balance in one from any of the two ways,
+       
+       1. Join our Discord [server](https://discord.gg/xUCxWtu9dj), you will get entered in ```prajna-faucet-1``` channel
+
+          Type this command to get balance, ```$request <your-wallet-address>```
+
+       2. Join our hack:DiD Telegram [group](https://t.me/hackdid) and ping your wallet address in a chat
+
 
 ## Create Auth Token on Entity Developer Dashboard Service API
 
@@ -177,6 +191,43 @@ Your DID Register Response will look like this
     }
 
 Keep more than 2 DID registered for further SSI Operations. You can follow the same steps for Creating DID and then Registering it.
+
+3. **Create Schema**
+
+   Now click on ```/api/v1/schema``` tab of POST and try it out by following
+
+   Replace the name value under schema object as ```PascalCase```, ```author``` value by registerd DID id and ```verificationMethodId``` as same we did in Registering DID Document
+
+   For fields in the schema you have to choose ```camelCase``` variable names
+
+   Here is an example of a request body
+
+         {
+           "schema": {
+             "name": "RailwayTicketSchema",
+             "author": "did:hid:testnet:z6MkfUjJyJCCxTXU6N6om8B2WAubhCMECgVpBSwBbqbvVYEy",
+             "description": "Railway ticket schema\"",
+             "additionalProperties": false,
+             "fields": [
+               {
+                 "name": "firstName",
+                 "format": ",
+                 "type": "string",
+                 "required": false
+               },
+               {
+                 "name": "lastName",
+                 "format": ",
+                 "type": "string",
+                 "required": false
+               }
+             ]
+           },
+           "namespace": "testnet",
+           "verificationMethodId": "did:hid:testnet:z6MkfUjJyJCCxTXU6N6om8B2WAubhCMECgVpBSwBbqbvVYEy#key-1"
+         }
+
+   
 
 
    
